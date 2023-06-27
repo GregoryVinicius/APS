@@ -1,0 +1,19 @@
+@startuml
+!theme blueprint
+
+    left to right direction
+
+    :Farmaceltico: as F1
+    :Caixa: as C1
+
+    (Pesquisar Remedio\npor Laboratorio) as UC001
+    (Consultar Cadastro de Remédio) as UC002
+    (Verificar Historico de Vendas) as UC003
+    (Gerenciar Laboratorio) as UC004
+
+    F1 --> UC001
+    F1 --> UC002
+    C1 --> UC003
+
+    UC001 .. UC004
+@enduml
