@@ -1,0 +1,17 @@
+@startuml
+
+    !theme blueprint
+
+    left to right direction
+
+    :Usuario: as U1
+    :Gestor: as G1
+
+    (Menu Ordens) as MO1
+    (Fechar Ordem) as FO1
+
+    U1 --> MO1
+    G1 --> MO1
+    MO1 --> FO1
+    
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+
+    !theme blueprint
+
+    left to right direction
+
+    :Usuario: as U1
+    :Gestor da Produção: as G1
+
+    (Área de Ordens) as AO1
+    (Relatorio de Ordens) as RO1
+
+    U1 --> AO1
+    G1 --> AO1
+    AO1 --> RO1
+
+@enduml
