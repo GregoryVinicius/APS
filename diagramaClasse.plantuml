@@ -1,10 +1,12 @@
 @startuml
 
     Class Pessoa {
+        # int id
         # String nome
         # String email
         # String telefone
         # int nivelAdm
+        /'
         --
         + void Pessoa()
         .. getters e setters ..
@@ -16,6 +18,7 @@
         + void setTelefone(String telefone)
         + int getNivelAdm()
         + void setNivelAdm(int nivelAdm)
+        '/
     } 
 
     Class Usuario{  
@@ -25,16 +28,18 @@
 
     }
     Class Crud{
-        + void cadastrarUsuario(String nome, String email, String telefone, int nivelAdm)
-        + void mostarUsuario(String nome, String email, String telefone, int nivelAdm)
-        + void modificarUsuario(String nome, String email, String telefone, int nivelAdm)
-        + void removerUsuario(String nome, String email, String telefone, int nivelAdm)
+        /'
+        + void cadastrarUsuario(int id, String nome, String email, String telefone, int nivelAdm)
+        + void mostarUsuario(int id)
+        + void modificarUsuario(int id, String nome, String email, String telefone, int nivelAdm)
+        + void removerUsuario(int id)
+        '/
     }
 
     Usuario --|> Pessoa
     Gestor --|> Pessoa
     Gestor -- Usuario
-    Gestor --* Crud : use
+    Gestor --* Crud : usa
     Crud --o Pessoa
     Crud -- Usuario
 
